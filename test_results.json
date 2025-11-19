@@ -1,0 +1,47 @@
+{
+  "small : 271": {
+    "chunk_size": 271,
+    "retrieval_metrics": {
+      "hit_rate": 0.8,
+      "precision@k": 0.307,
+      "mrr": 0.76
+    },
+    "ragas_metrics": {
+      "answer_relevance_avg": 0.217,
+      "faithfulness_avg": 0.479
+    },
+    "rouge_l_avg": 0.117,
+    "bleu_avg": 0.02,
+    "cosine_similarity_avg": 0.359
+  },
+  "medium : 593": {
+    "chunk_size": 593,
+    "retrieval_metrics": {
+      "hit_rate": 0.88,
+      "precision@k": 0.36,
+      "mrr": 0.84
+    },
+    "ragas_metrics": {
+      "answer_relevance_avg": 0.261,
+      "faithfulness_avg": 0.625
+    },
+    "rouge_l_avg": 0.152,
+    "bleu_avg": 0.027,
+    "cosine_similarity_avg": 0.439
+  },
+  "large : 843": {
+    "chunk_size": 843,
+    "retrieval_metrics": {
+      "hit_rate": 0.88,
+      "precision@k": 0.36,
+      "mrr": 0.8
+    },
+    "ragas_metrics": {
+      "answer_relevance_avg": 0.25,
+      "faithfulness_avg": 0.631
+    },
+    "rouge_l_avg": 0.113,
+    "bleu_avg": 0.015,
+    "cosine_similarity_avg": 0.291
+  }
+}

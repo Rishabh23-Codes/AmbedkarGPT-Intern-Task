@@ -1,0 +1,17 @@
+langchain
+langchain-ollama
+langchain-community
+langchain-huggingface
+langchain-text-splitters
+langchain-chroma
+
+
+sentence-transformers
+
+numpy
+scikit-learn
+nltk
+tqdm
+
+ragas
+rouge-score
