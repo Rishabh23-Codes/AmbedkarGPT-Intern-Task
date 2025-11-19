@@ -278,57 +278,6 @@ def evaluate_chunks(chunk_size):
     'cosine_similarity_avg': round(float(sum(cos_scores) / len(cos_scores)), 3)
 }
 
-
-# ------------------------------------------------------------
-# MAIN
-# ------------------------------------------------------------
-
-# def main():
-#     results={}
-
-#     for size,val in CHUNK_SIZES.items():
-#         results[size+' : '+str(val)]=evaluate_chunks(val)
-
-#     with open("test_results.json","w") as f:
-#         json.dump(results,f,indent=2)
-
-#     print("\nEvaluation Completed. Results saved to test_results.json\n")
-
-# if __name__=='__main__':
-#     main()
-
-# def main():
-#     # Use a fixed chunk size of 900
-#     chunk_size = 900
-    
-#     # Evaluate
-#     chunk_results = evaluate_chunks(chunk_size)
-
-#     # Print results in the detailed format
-#     print(f"\nEvaluation Results for chunk size {chunk_size} (Total chunks: {len(chunk_results.get('split_docs', []))})")
-    
-#     print(f"\n  📈 Retrieval Metrics:")
-#     print(f"     • Hit Rate:       {chunk_results['retrieval_metrics']['hit_rate']}")
-#     print(f"     • Precision@K:    {chunk_results['retrieval_metrics']['precision@k']}")
-#     print(f"     • MRR:            {chunk_results['retrieval_metrics']['mrr']}")
-
-#     print(f"\n  📝 Answer Quality Metrics:")
-#     print(f"     • Answer Relevance: {chunk_results['ragas_metrics']['answer_relevance_avg']}")
-#     print(f"     • Faithfulness:     {chunk_results['ragas_metrics']['faithfulness_avg']}")
-
-#     print(f"\n  📊 Text Generation Metrics:")
-#     print(f"     • Rouge-L:         {chunk_results['rouge_l_avg']}")
-#     print(f"     • BLEU:            {chunk_results['bleu_avg']}")
-#     print(f"     • Cosine Similarity: {chunk_results['cosine_similarity_avg']}")
-
-#     print("\n✅ Evaluation Completed.\n")
-
-# if __name__ == '__main__':
-#     main()
-
-
-
-
 def main():
     results = {}
 
