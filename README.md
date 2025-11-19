@@ -216,7 +216,8 @@ pip install -r requirements.txt
 
 6. Install Ollama + Model:
 ```bash
-ollama pull llama3.2:1b 
+ollama pull llama3.2:1b   # light-weight model
+ollama pull mistral       # recommended 
 ```
 7. ▶ Run Assignment-1 (RAG CLI System):
 ```bash
