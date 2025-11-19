@@ -273,5 +273,5 @@ Below are the visual proofs of the evaluation performed in **Assignment-2**, sho
 
 **Rishabh**  
   
-📧 Email: rishabh23032000@gmail@gmail.com  
+📧 Email: rishabh23032000@gmail.com  
 🔗 [LinkedIn](https://www.linkedin.com/in/rishabh-503315270/)  
