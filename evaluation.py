@@ -52,9 +52,9 @@ CHUNK_SIZES={
     'large':random.randint(800,1000)
 }
 
-# ----------------------------
-# DOCUMENT LOADERS
-# ----------------------------
+
+####### DOCUMENT LOADERS
+
 def load_corpus(corpus_dir: str):
     """Load all .txt files from corpus directory."""
     corpus=[]
@@ -74,9 +74,9 @@ def load_test_data():
     print("✅ Test data loaded.")
     return data
     
-# ----------------------------
-# TEXT PROCESSING
-# ----------------------------
+
+####### TEXT PROCESSING
+
 def make_text_splitter(chunk_size,overlap=50):
     """Create text splitter for chunking documents."""
     splitter=CharacterTextSplitter(
@@ -95,9 +95,9 @@ def get_embeddings():
 
 
 
-# ----------------------------
-# VECTOR STORE
-# ----------------------------
+
+######## VECTOR STORE
+
 def create_chroma(documents,embeddings,collection_name,persist=True):
     """Create Chroma vector store from documents."""
     persist_dir = str(CHROMA_PERSIST_DIR)
@@ -110,9 +110,9 @@ def create_chroma(documents,embeddings,collection_name,persist=True):
     print("✅ Chroma vector store created.")
     return vect
 
-# ----------------------------
-# RAG GENERATION
-# ----------------------------
+
+######## RAG GENERATION
+
 
 def build_retrieval_qa(question,retriever):
     """Generate answer using retriever and LLM."""
@@ -142,9 +142,9 @@ def build_retrieval_qa(question,retriever):
     answer=llm.invoke(prompt).strip()
     return answer,docs
 
-# ----------------------------
-# RETRIEVAL METRICS
-# ----------------------------
+
+######### RETRIEVAL METRICS
+
 def hit_rate(retrieved,gold):
     """Calculate hit rate: percentage of queries with relevant retrievals."""
     hits=sum(1 for r,g in zip(retrieved,gold) if set(r) & set(g))
@@ -178,9 +178,9 @@ def bleu(pred,ref):
     smoothie=SmoothingFunction().method4
     return sentence_bleu([ref.split()],pred.split(),smoothing_function=smoothie)
 
-# ------------------------------------------------------------
-# EVALUATION LOOP
-# ------------------------------------------------------------
+
+####### EVALUATION LOOP
+
 def evaluate_chunks(chunk_size):
     print(f'\nRunning Evaluation for chunk size = {chunk_size}')
 

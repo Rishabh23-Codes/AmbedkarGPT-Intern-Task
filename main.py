@@ -1,7 +1,6 @@
 
-# --------------------------------------------------------
-# main.py — Assignment 1 (Single Combined Working File)
-# --------------------------------------------------------
+######## main.py — Assignment 1 
+
 
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import CharacterTextSplitter
@@ -16,9 +15,9 @@ from typing import List
 import os
 
 
-# --------------------------------------------------
-# LOADER (Assignment-1 only uses speech.txt)
-# --------------------------------------------------
+
+######## LOADER (Assignment-1 only uses speech.txt)
+
 def load_single_file(path: str) -> List[Document]:
     loader = TextLoader(path)
     docs = loader.load()
@@ -26,9 +25,9 @@ def load_single_file(path: str) -> List[Document]:
     return docs
 
 
-# --------------------------------------------------
-# SPLITTER
-# --------------------------------------------------
+
+######## SPLITTER
+
 def make_text_splitter(chunk_size: int=500,overlap:int=50):
     splitter=CharacterTextSplitter(
         separator="\n",
@@ -39,18 +38,17 @@ def make_text_splitter(chunk_size: int=500,overlap:int=50):
     return splitter
 
 
-# --------------------------------------------------
-# EMBEDDER
-# --------------------------------------------------
+######## EMBEDDER
+
 def get_embeddings():
     embeddings = HuggingFaceEmbeddings(model_name=HF_EMBEDDING_MODEL)
     print("✅ Embeddings loaded")
     return embeddings
 
 
-# --------------------------------------------------
-# VECTORSTORE
-# --------------------------------------------------
+
+######## VECTORSTORE
+
 def create_chroma(documents,embeddings,persist=True,collection_name="speech_assignment1"):
     persist_dir = str(CHROMA_PERSIST_DIR)
     vect = Chroma.from_documents(
@@ -63,9 +61,9 @@ def create_chroma(documents,embeddings,persist=True,collection_name="speech_assi
     return vect
 
 
-# --------------------------------------------------
-# RAG:-  build_retrieval_qa function
-# --------------------------------------------------
+
+######## RAG:-  build_retrieval_qa function
+
 def build_retrieval_qa(question: str,retriever):
     
     # 1. Retrieve documnents
@@ -103,9 +101,9 @@ def build_retrieval_qa(question: str,retriever):
     return {'answer':answer ,'source_documents':docs}
 
 
-# --------------------------------------------------
-# BUILD PIPELINE FOR ASSIGNMENT 1
-# --------------------------------------------------
+
+######## BUILD PIPELINE FOR ASSIGNMENT 1
+
 def assignment1():
     docs=load_single_file(str(SPEECH_FILE))
     splitter=make_text_splitter()
@@ -122,9 +120,9 @@ def assignment1():
     print("✅ Retriever ready")
     return retriever
 
-# --------------------------------------------------
-# CLI LOOP
-# --------------------------------------------------
+
+####### CLI LOOP
+
 def cli_loop(retriever):
     print("AmbedkarGPT (Assignemnt-1) - type 'exit' to quit.")
     while True:
@@ -140,9 +138,9 @@ def cli_loop(retriever):
         print(res['answer'])
 
 
-# --------------------------------------------------
-# MAIN
-# --------------------------------------------------
+
+######### MAIN FUNCTION
+
 def main():
     retriever=assignment1()
     cli_loop(retriever)
